@@ -1,0 +1,25 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# --- Secretos: NUNCA subir credenciales a git ---
+.env
+
+# --- Datos descargados (pueden pesar mucho; se regeneran con los scripts) ---
+data/
+
+# --- Editores / sistema operativo ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# --- Notebooks ---
+.ipynb_checkpoints/
