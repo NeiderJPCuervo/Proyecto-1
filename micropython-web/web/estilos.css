@@ -1,0 +1,106 @@
+:root {
+  --fondo: #f4f6fb;
+  --panel: #ffffff;
+  --texto: #1f2937;
+  --suave: #6b7280;
+  --acento: #2563eb;
+  --ok: #16a34a;
+  --error: #dc2626;
+  --borde: #e5e7eb;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fondo: #0f172a;
+    --panel: #1e293b;
+    --texto: #e2e8f0;
+    --suave: #94a3b8;
+    --acento: #60a5fa;
+    --borde: #334155;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--fondo);
+  color: var(--texto);
+}
+
+header {
+  padding: 24px 16px;
+  text-align: center;
+}
+header h1 { margin: 0 0 4px; }
+header p { margin: 0 0 12px; color: var(--suave); }
+
+.estado {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  background: var(--borde);
+}
+.estado.ok { background: var(--ok); color: #fff; }
+.estado.error { background: var(--error); color: #fff; }
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 16px 32px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr); /* evita que la tabla ensanche la página en móvil */
+  gap: 16px;
+}
+
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.tarjeta, .panel {
+  background: var(--panel);
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  padding: 16px;
+}
+.tarjeta h2, .panel h2 { margin: 0 0 8px; font-size: 1rem; color: var(--suave); }
+.valor { margin: 0; font-size: 2rem; font-weight: 700; }
+.valor.pequeno { font-size: 1.1rem; }
+
+canvas { width: 100%; display: block; }
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-end;
+}
+label { display: flex; flex-direction: column; gap: 4px; font-size: 0.9rem; flex: 1 1 160px; }
+input {
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid var(--borde);
+  background: var(--fondo);
+  color: var(--texto);
+}
+button {
+  padding: 9px 20px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--acento);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+#mensaje { min-height: 1.2em; margin: 8px 0 0; }
+#mensaje.ok { color: var(--ok); }
+#mensaje.error { color: var(--error); }
+
+.tabla-contenedor { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+th, td { padding: 8px; text-align: left; border-bottom: 1px solid var(--borde); white-space: nowrap; }
+th { color: var(--suave); font-weight: 600; }
