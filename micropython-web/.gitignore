@@ -1,0 +1,2 @@
+# Base de datos local de lecturas (se crea sola al iniciar el servidor)
+*.db

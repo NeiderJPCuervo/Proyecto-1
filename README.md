@@ -85,6 +85,7 @@ ruff check .
 │   ├── tests/                      # pruebas automáticas + datos de ejemplo
 │   └── pyproject.toml              # dependencias y configuración
 ├── docs/fases/                     # guías de aprendizaje de cada fase
+├── micropython-web/                # proyecto aparte: MicroPython + Nginx (ver su README)
 └── .env.example                    # plantilla de configuración
 ```
 
